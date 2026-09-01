@@ -1,0 +1,907 @@
+/* =========================================================
+   INTERIOR & VISUALIZATION
+   ATIq UR REHMAN PORTFOLIO
+   ========================================================= */
+
+.interior {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   INTERIOR SECTION BACKGROUND
+   ========================================================= */
+
+.interior::before {
+  content: "";
+  position: absolute;
+
+  top: 10%;
+  left: -180px;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 174, 239, 0.08) 0%,
+      rgba(0, 174, 239, 0.03) 35%,
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+.interior::after {
+  content: "";
+
+  position: absolute;
+
+  right: -160px;
+  bottom: 0;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 215, 0, 0.045) 0%,
+      transparent 70%
+    );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.interior .section-head {
+  position: relative;
+  z-index: 2;
+
+  margin-bottom: 55px;
+}
+
+.interior .section-head h2 {
+  max-width: 850px;
+}
+
+.interior .section-head p {
+  max-width: 650px;
+
+  margin-top: 18px;
+
+  color: var(--muted);
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   2D → 3D STAGE
+   ========================================================= */
+
+.interior-stage {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    80px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 25px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.plan-card,
+.room-card {
+  position: relative;
+
+  min-height: 500px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.28);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.plan-card:hover,
+.room-card:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(0, 174, 239, 0.32);
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.38),
+    0 0 45px rgba(0, 174, 239, 0.06);
+}
+
+
+/* =========================================================
+   2D FLOOR PLAN CARD
+   ========================================================= */
+
+.plan-card {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 28px;
+
+  color:
+    rgba(0, 174, 239, 0.85);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0, 174, 239, 0.055),
+      transparent 65%
+    ),
+    rgba(255, 255, 255, 0.015);
+}
+
+
+/* =========================================================
+   FLOOR PLAN LABEL
+   ========================================================= */
+
+.plan-label,
+.room-label {
+  position: absolute;
+
+  top: 22px;
+  left: 26px;
+
+  z-index: 5;
+
+  color: var(--muted);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FLOOR PLAN IMAGE
+   ========================================================= */
+
+.plan-card > img {
+  display: block;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  min-height: 380px;
+
+  object-fit: cover !important;
+
+  margin: 0;
+
+  border-radius: 18px !important;
+
+  opacity: 0.94;
+
+  filter:
+    saturate(0.75)
+    contrast(1.08)
+    brightness(0.82);
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+
+.plan-card:hover > img {
+  transform: scale(1.035);
+
+  filter:
+    saturate(0.9)
+    contrast(1.1)
+    brightness(0.92);
+}
+
+
+/* =========================================================
+   FLOOR PLAN OVERLAY
+   ========================================================= */
+
+.plan-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 7, 13, 0.48) 0%,
+      transparent 25%,
+      transparent 65%,
+      rgba(5, 7, 13, 0.72) 100%
+    );
+}
+
+
+/* Keep label above overlay */
+
+.plan-card .plan-label {
+  z-index: 6;
+}
+
+.plan-card > span {
+  position: absolute;
+
+  left: 26px;
+  bottom: 22px;
+
+  z-index: 6;
+
+  color: var(--muted-2);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   3D ARROW
+   ========================================================= */
+
+.arrow-3d {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 62px;
+  height: 62px;
+
+  margin: auto;
+
+  border:
+    1px solid
+    rgba(0, 174, 239, 0.28);
+
+  border-radius: 50%;
+
+  color: var(--blue);
+
+  background:
+    rgba(0, 174, 239, 0.055);
+
+  font-size: 27px;
+
+  box-shadow:
+    0 0 45px
+    rgba(0, 174, 239, 0.10);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.interior-stage:hover .arrow-3d {
+  transform: scale(1.08);
+
+  background:
+    rgba(0, 174, 239, 0.10);
+
+  box-shadow:
+    0 0 60px
+    rgba(0, 174, 239, 0.16);
+}
+
+
+/* =========================================================
+   3D ROOM CARD
+   ========================================================= */
+
+.room-card {
+  padding: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.018);
+}
+
+
+/* =========================================================
+   3D PHOTO
+   ========================================================= */
+
+.real-interior-photo {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 478px;
+
+  overflow: hidden;
+
+  border-radius: 19px;
+
+  background:
+    #080b12;
+}
+
+
+/* =========================================================
+   3D IMAGE
+   ========================================================= */
+
+.real-interior-photo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 478px;
+
+  object-fit: cover;
+
+  filter:
+    saturate(0.9)
+    contrast(1.08)
+    brightness(0.88);
+
+  transition:
+    transform 0.9s cubic-bezier(.2,.7,.2,1),
+    filter 0.7s ease;
+}
+
+
+.room-card:hover
+.real-interior-photo img {
+  transform: scale(1.07);
+
+  filter:
+    saturate(1)
+    contrast(1.1)
+    brightness(0.98);
+}
+
+
+/* =========================================================
+   3D IMAGE OVERLAY
+   ========================================================= */
+
+.real-interior-photo::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 7, 13, 0.48) 0%,
+      transparent 28%,
+      transparent 55%,
+      rgba(5, 7, 13, 0.78) 100%
+    );
+}
+
+
+/* =========================================================
+   ROOM LABEL
+   ========================================================= */
+
+.room-card .room-label {
+  z-index: 10;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+}
+
+
+/* =========================================================
+   BOTTOM IMAGE LABEL
+   ========================================================= */
+
+.interior-photo-label {
+  position: absolute;
+
+  left: 18px;
+  bottom: 18px;
+
+  z-index: 10;
+
+  padding:
+    9px 13px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  border-radius: 9px;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  background:
+    rgba(5, 7, 13, 0.68);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+.room-card:hover .interior-photo-label {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(0, 174, 239, 0.28);
+}
+
+
+/* =========================================================
+   THREE SERVICES
+   ========================================================= */
+
+.three-services {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  margin-top: 22px;
+
+  border-top:
+    1px solid
+    var(--border);
+}
+
+
+/* =========================================================
+   SERVICE ITEM
+   ========================================================= */
+
+.three-services > div {
+  position: relative;
+
+  min-height: 155px;
+
+  padding:
+    28px 28px 22px;
+
+  border-right:
+    1px solid
+    var(--border);
+
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.three-services > div:last-child {
+  border-right: none;
+}
+
+
+.three-services > div:hover {
+  background:
+    rgba(0, 174, 239, 0.025);
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================================
+   SERVICE NUMBER
+   ========================================================= */
+
+.three-services > div > span {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color:
+    rgba(0, 174, 239, 0.72);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   SERVICE TITLE
+   ========================================================= */
+
+.three-services h3 {
+  margin: 0 0 9px;
+
+  color: var(--text);
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SERVICE DESCRIPTION
+   ========================================================= */
+
+.three-services p {
+  max-width: 300px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DECORATIVE GRID
+   ========================================================= */
+
+.interior-stage::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -35px;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 174, 239, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 174, 239, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .interior-stage {
+    grid-template-columns:
+      1fr;
+
+    gap: 20px;
+  }
+
+
+  .arrow-3d {
+    transform: rotate(90deg);
+
+    width: 54px;
+    height: 54px;
+
+    font-size: 23px;
+  }
+
+
+  .interior-stage:hover .arrow-3d {
+    transform:
+      rotate(90deg)
+      scale(1.08);
+  }
+
+
+  .plan-card,
+  .room-card {
+    min-height: 430px;
+  }
+
+
+  .plan-card > img {
+    min-height: 380px;
+  }
+
+
+  .real-interior-photo,
+  .real-interior-photo img {
+    min-height: 408px;
+  }
+
+
+  .three-services {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .three-services > div {
+    border-right: none;
+
+    border-bottom:
+      1px solid
+      var(--border);
+
+    min-height: auto;
+  }
+
+
+  .three-services > div:last-child {
+    border-bottom: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .interior .section-head {
+    margin-bottom: 35px;
+  }
+
+
+  .interior .section-head h2 {
+    font-size: 32px;
+
+    line-height: 1.08;
+  }
+
+
+  .interior .section-head p {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+
+  .interior-stage {
+    gap: 14px;
+  }
+
+
+  .plan-card,
+  .room-card {
+    min-height: 340px;
+
+    border-radius: 20px;
+  }
+
+
+  .plan-card {
+    padding: 12px;
+  }
+
+
+  .plan-label,
+  .room-label {
+    top: 17px;
+    left: 18px;
+
+    font-size: 8px;
+  }
+
+
+  .plan-card > img {
+    min-height: 315px;
+
+    border-radius: 14px !important;
+  }
+
+
+  .plan-card > span {
+    left: 18px;
+    bottom: 17px;
+
+    max-width: 80%;
+
+    font-size: 7px;
+  }
+
+
+  .arrow-3d {
+    width: 48px;
+    height: 48px;
+
+    font-size: 20px;
+  }
+
+
+  .room-card {
+    padding: 7px;
+  }
+
+
+  .real-interior-photo {
+    min-height: 340px;
+
+    border-radius: 15px;
+  }
+
+
+  .real-interior-photo img {
+    min-height: 340px;
+
+    border-radius: 15px;
+  }
+
+
+  .interior-photo-label {
+    left: 14px;
+    bottom: 14px;
+
+    padding:
+      8px 10px;
+
+    font-size: 7px;
+  }
+
+
+  .three-services {
+    margin-top: 15px;
+  }
+
+
+  .three-services > div {
+    padding:
+      22px 18px 20px;
+  }
+
+
+  .three-services h3 {
+    font-size: 16px;
+  }
+
+
+  .three-services p {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .interior .section-head h2 {
+    font-size: 28px;
+  }
+
+
+  .plan-card,
+  .room-card {
+    min-height: 300px;
+  }
+
+
+  .plan-card > img {
+    min-height: 275px;
+  }
+
+
+  .real-interior-photo,
+  .real-interior-photo img {
+    min-height: 300px;
+  }
+
+}
