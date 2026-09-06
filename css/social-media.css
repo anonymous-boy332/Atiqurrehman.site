@@ -1,0 +1,674 @@
+/* =========================================================
+   ATIq UR REHMAN PORTFOLIO
+   SOCIAL MEDIA PROJECTS
+   Dedicated Social Media Project Styling
+   ========================================================= */
+
+
+/* =========================================================
+   SOCIAL MEDIA CARD
+   ========================================================= */
+
+.project-card[data-cat="social"] {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA IMAGE AREA
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-art {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 217, 255, 0.18),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #050914 0%,
+            #0b1224 55%,
+            #111a32 100%
+        );
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA IMAGE
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-art img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.5s ease;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+   ========================================================= */
+
+.project-card[data-cat="social"]:hover
+.project-art img {
+    transform: scale(1.045);
+    filter: saturate(1.08) contrast(1.03);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 7, 18, 0.02) 0%,
+            rgba(3, 7, 18, 0.08) 45%,
+            rgba(3, 7, 18, 0.62) 100%
+        );
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA CATEGORY LABEL
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-photo-label {
+    position: absolute;
+
+    left: 18px;
+    bottom: 18px;
+
+    z-index: 3;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 30px;
+    padding: 7px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+
+    background:
+        rgba(8, 12, 28, 0.78);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    color: #ffffff;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.project-card[data-cat="social"]:hover
+.project-photo-label {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(0, 217, 255, 0.45);
+
+    background:
+        rgba(0, 217, 255, 0.12);
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA PROJECT INFO
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-info {
+    position: relative;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA CATEGORY TEXT
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-info > span {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    color: #00d9ff;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CATEGORY DOT
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-info > span::before {
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #00d9ff;
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, 0.8);
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA TITLE
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-info h3 {
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.project-card[data-cat="social"]:hover
+.project-info h3 {
+    color: #00d9ff;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA DESCRIPTION
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-info p {
+    color: rgba(210, 220, 238, 0.78);
+}
+
+
+/* =========================================================
+   TECHNOLOGY / PLATFORM TAGS
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-info .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL TAG
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-info .tags span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 29px;
+    padding: 6px 11px;
+
+    border: 1px solid rgba(0, 217, 255, 0.12);
+    border-radius: 999px;
+
+    background:
+        rgba(0, 217, 255, 0.045);
+
+    color: rgba(225, 235, 250, 0.82);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.02em;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.project-card[data-cat="social"] .project-info .tags span:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(0, 217, 255, 0.4);
+
+    background:
+        rgba(0, 217, 255, 0.10);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA CARD TOP GLOW
+   ========================================================= */
+
+.project-card[data-cat="social"]::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 10%;
+    right: 10%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 217, 255, 0.65),
+            transparent
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+}
+
+
+.project-card[data-cat="social"]:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA CARD HOVER GLOW
+   ========================================================= */
+
+.project-card[data-cat="social"]::after {
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    top: -150px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 217, 255, 0.07);
+
+    filter: blur(55px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.5s ease;
+}
+
+
+.project-card[data-cat="social"]:hover::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   LIVE LINK
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-live-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 20px;
+
+    color: #00d9ff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        gap 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.project-card[data-cat="social"] .project-live-link:hover {
+    gap: 12px;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA FILTER ACTIVE STATE
+   ========================================================= */
+
+#filters .filter[data-filter="social"].active {
+    color: #ffffff;
+
+    border-color:
+        rgba(0, 217, 255, 0.45);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 217, 255, 0.22),
+            rgba(124, 58, 237, 0.22)
+        );
+
+    box-shadow:
+        0 8px 28px rgba(0, 217, 255, 0.12);
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA FILTER HOVER
+   ========================================================= */
+
+#filters .filter[data-filter="social"]:hover {
+    border-color:
+        rgba(0, 217, 255, 0.35);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA LARGE FEATURED CARD
+   ========================================================= */
+
+.project-card[data-cat="social"].large {
+    position: relative;
+}
+
+
+/* =========================================================
+   LARGE SOCIAL IMAGE
+   ========================================================= */
+
+.project-card[data-cat="social"].large .project-art {
+    min-height: 360px;
+}
+
+
+/* =========================================================
+   NORMAL SOCIAL IMAGE
+   ========================================================= */
+
+.project-card[data-cat="social"]:not(.large) .project-art {
+    min-height: 280px;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA CARD ANIMATION
+   ========================================================= */
+
+.project-card[data-cat="social"] {
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+
+.project-card[data-cat="social"]:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.28),
+        0 0 35px rgba(0, 217, 255, 0.055);
+}
+
+
+/* =========================================================
+   INSTAGRAM / SOCIAL VISUAL FEEL
+   ========================================================= */
+
+.project-card[data-cat="social"] .real-project-art {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(124, 58, 237, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(0, 217, 255, 0.12),
+            transparent 32%
+        ),
+        #070b17;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .project-card[data-cat="social"] .project-photo-label {
+        left: 14px;
+        bottom: 14px;
+
+        padding: 6px 10px;
+
+        font-size: 9px;
+    }
+
+
+    .project-card[data-cat="social"] .project-info .tags {
+        gap: 6px;
+        margin-top: 15px;
+    }
+
+
+    .project-card[data-cat="social"] .project-info .tags span {
+        min-height: 27px;
+
+        padding: 5px 9px;
+
+        font-size: 9px;
+    }
+
+
+    .project-card[data-cat="social"].large .project-art,
+    .project-card[data-cat="social"]:not(.large) .project-art {
+        min-height: 240px;
+    }
+
+
+    .project-card[data-cat="social"]:hover {
+        transform: translateY(-3px);
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .project-card[data-cat="social"] .project-info > span {
+        font-size: 9px;
+    }
+
+
+    .project-card[data-cat="social"] .project-info h3 {
+        font-size: 20px;
+    }
+
+
+    .project-card[data-cat="social"] .project-info p {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+
+    .project-card[data-cat="social"].large .project-art,
+    .project-card[data-cat="social"]:not(.large) .project-art {
+        min-height: 210px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-card[data-cat="social"],
+    .project-card[data-cat="social"] .project-art img,
+    .project-card[data-cat="social"] .project-photo-label,
+    .project-card[data-cat="social"] .project-info .tags span,
+    .project-card[data-cat="social"] .project-live-link {
+        transition: none;
+    }
+
+}
+
+/* =========================================================
+   SOCIAL MEDIA IMAGE — NO CROPPING FIX
+   ========================================================= */
+
+.project-card[data-cat="social"] .project-art {
+    aspect-ratio: 3 / 2;
+    height: auto;
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 217, 255, 0.12),
+            transparent 35%
+        ),
+        #070b17;
+}
+
+
+/* Keep the complete social post visible */
+
+.project-card[data-cat="social"] .project-art img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    transform: none !important;
+}
+
+
+/* Disable crop-style hover zoom */
+
+.project-card[data-cat="social"]:hover
+.project-art img {
+    transform: none !important;
+}
+
+
+/* Featured social card */
+
+.project-card[data-cat="social"].large .project-art {
+    aspect-ratio: 3 / 2;
+    min-height: 0;
+}
+
+
+/* Normal social cards */
+
+.project-card[data-cat="social"]:not(.large) .project-art {
+    aspect-ratio: 3 / 2;
+    min-height: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .project-card[data-cat="social"] .project-art,
+    .project-card[data-cat="social"].large .project-art,
+    .project-card[data-cat="social"]:not(.large) .project-art {
+        aspect-ratio: 3 / 2;
+        min-height: 0;
+    }
+
+    .project-card[data-cat="social"] .project-art img {
+        object-fit: contain;
+    }
+
+}
+
+
+/* Small mobile */
+
+@media (max-width: 480px) {
+
+    .project-card[data-cat="social"] .project-art,
+    .project-card[data-cat="social"].large .project-art,
+    .project-card[data-cat="social"]:not(.large) .project-art {
+        aspect-ratio: 3 / 2;
+    }
+
+}
